@@ -78,7 +78,8 @@ public class AnimalsController implements Initializable { //NOPMD - suppressed A
      **/
     SaveAnimal saveAnimal; //NOPMD - suppressed BeanMembersShouldSerialize - TODO explain reason for suppression
     /***поле connection*/
-    @SuppressWarnings({"unused", "FieldCanBeLocal"}) //NOPMD - suppressed AvoidDuplicateLiterals - TODO explain reason for suppression
+    @SuppressWarnings({"unused", "FieldCanBeLocal"})
+    //NOPMD - suppressed AvoidDuplicateLiterals - TODO explain reason for suppression
     //NOPMD - suppressed AvoidDuplicateLiterals - TODO explain reason for suppression
     private Connection connection; //NOPMD - suppressed BeanMembersShouldSerialize - TODO explain reason for suppression
 

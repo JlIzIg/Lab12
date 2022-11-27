@@ -2,19 +2,28 @@ package com.example.lab12;
 
 import org.junit.Test;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import static org.junit.Assert.*;
 
 public class SaveAnimalTest {
 
-    @Test
-    public void saveToTxt() {
+    @org.junit.Test(timeout = 5000)
+    public void saveToTxt() throws SQLException, IOException {
+        SaveAnimal saveAnimal = new SaveAnimal();
+        saveAnimal.saveToTxt();
     }
 
-    @Test
-    public void saveToJson() {
+    @org.junit.Test(timeout = 5000)
+    public void saveToJson() throws SQLException, IOException {
+        SaveAnimal saveAnimal = new SaveAnimal();
+        saveAnimal.saveToJson();
     }
 
-    @Test
-    public void saveToExcel() {
+    @org.junit.Test(timeout = 5000)
+    public void saveToExcel() throws SQLException, IOException {
+        SaveAnimal saveAnimal = new SaveAnimal();
+        saveAnimal.saveToExcel();
     }
 }

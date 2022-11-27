@@ -3,9 +3,11 @@ package com.example.lab12;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainApplication extends Application { //NOPMD - suppressed AtLeastOneConstructor - TODO explain reason for suppression
     public static void main(String[] args) { //NOPMD - suppressed CommentRequired - TODO explain reason for suppression
@@ -19,7 +21,7 @@ public class MainApplication extends Application { //NOPMD - suppressed AtLeastO
         stage.setTitle("nimals");
         stage.setScene(scene);
         stage.setResizable(false);
-        // stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("images/animal.bmp")).toExternalForm())); //NOPMD - suppressed CommentSize - TODO explain reason for suppression
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("Images/animal.png")).toExternalForm())); //NOPMD - suppressed CommentSize - TODO explain reason for suppression
         stage.show();
     }
 }

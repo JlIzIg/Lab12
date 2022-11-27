@@ -8,17 +8,14 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 public class AnimalTest {
-    @Test
-    public void createObject()
-    {
-        Animal animal = new Animal(1, "  Southern Copperhead  ", "Agkistrodon contortrix contortix", "Reptile", "Diurnal   ", 4.0, 4.5,  0.5, 0.75, 18.0, "Woodlands and rocky hillsides","Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg" );
+    @org.junit.Test(timeout = 300)
+    public void createObject() {
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "Agkistrodon contortrix contortix", "Reptile", "Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "Woodlands and rocky hillsides", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
         assertEquals("Southern Copperhead", animal.getName());
         assertNotEquals(2, animal.getId());
         assertEquals("Southern Copperhead", animal.getName());
         assertEquals("Diurnal", animal.getActiveTime());
-
-
-
+        assertNotEquals("Diurnal  ", animal.getActiveTime());
     }
 
     @Test
@@ -31,15 +28,13 @@ public class AnimalTest {
         );
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getName() {
-
-
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setName() {
-        Animal animal = new Animal(1, "  Southern Copperhead  ", "Agkistrodon contortrix contortix", "Reptile", "Diurnal   ", 4.0, 4.5,  0.5, 0.75, 18.0, "Woodlands and rocky hillsides","Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg" );
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "Agkistrodon contortrix contortix", "Reptile", "Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "Woodlands and rocky hillsides", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
         animal.setName(" Southern Copperhead  ");
         assertEquals("Southern Copperhead", animal.getName());
         animal.setName("  Southern Copperhead  ");
@@ -48,13 +43,13 @@ public class AnimalTest {
         assertEquals("Southern Copperhead", animal.getName());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getLatinName() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setLatinName() {
-        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "Reptile", "Diurnal   ", 4.0, 4.5,  0.5, 0.75, 18.0, "Woodlands and rocky hillsides","Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg" );
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "Reptile", "Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "Woodlands and rocky hillsides", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
         animal.setName(" Agkistrodon contortrix contortix  ");
         assertEquals("Agkistrodon contortrix contortix", animal.getLatinName());
         animal.setLatinName("  Agkistrodon contortrix contortix  ");
@@ -63,108 +58,145 @@ public class AnimalTest {
         assertEquals("Agkistrodon contortrix contortix", animal.getLatinName());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getAnimalType() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setAnimalType() {
 
-        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "Diurnal   ", 4.0, 4.5,  0.5, 0.75, 18.0, "Woodlands and rocky hillsides","Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg" );
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "Woodlands and rocky hillsides", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
         animal.setAnimalType(" Reptile  ");
         assertEquals("Reptile", animal.getAnimalType());
-        animal.setLatinName("  Agkistrodon contortrix contortix  ");
-        assertEquals("Agkistrodon contortrix contortix", animal.getLatinName());
-        animal.setLatinName(" Agkistrodon contortrix contortix   ");
-        assertEquals("Agkistrodon contortrix contortix", animal.getLatinName());
+        animal.setAnimalType("  Reptile  ");
+        assertEquals("Reptile", animal.getAnimalType());
+        animal.setAnimalType(" Reptile   ");
+        assertEquals("Reptile", animal.getAnimalType());
 
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getActiveTime() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setActiveTime() {
+
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "  Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "Woodlands and rocky hillsides", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
+        animal.setActiveTime(" Diurnal  ");
+        assertEquals("Diurnal", animal.getActiveTime());
+        animal.setActiveTime("  Diurnal  ");
+        assertEquals("Diurnal", animal.getActiveTime());
+        animal.setActiveTime(" Diurnal   ");
+        assertEquals("Diurnal", animal.getActiveTime());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getLenMin() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setLenMin() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getLenMax() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setLenMax() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getWgMin() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setWgMin() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getWgMax() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setWgMax() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getLifespan() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setLifespan() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getHabitat() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setHabitat() {
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "  Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "  Woodlands and rocky hillsides   ", "Small mammals, birds, frogs, and insects", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
+        animal.setHabitat(" Woodlands and rocky hillsides  ");
+        assertEquals("Woodlands and rocky hillsides", animal.getHabitat());
+        animal.setHabitat("  Woodlands and rocky hillsides  ");
+        assertEquals("Woodlands and rocky hillsides", animal.getHabitat());
+        animal.setHabitat(" Woodlands and rocky hillsides   ");
+        assertEquals("Woodlands and rocky hillsides", animal.getHabitat());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getDiet() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setDiet() {
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "  Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "  Woodlands and rocky hillsides   ", "  Small mammals, birds, frogs, and insects  ", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
+        animal.setDiet(" Small mammals, birds, frogs, and insects  ");
+        assertEquals("Small mammals, birds, frogs, and insects", animal.getDiet());
+        animal.setDiet("  Small mammals, birds, frogs, and insects  ");
+        assertEquals("Small mammals, birds, frogs, and insects", animal.getDiet());
+        animal.setDiet(" Small mammals, birds, frogs, and insects   ");
+        assertEquals("Small mammals, birds, frogs, and insects", animal.getDiet());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getGeoRange() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setGeoRange() {
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "  Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "  Woodlands and rocky hillsides   ", "  Small mammals, birds, frogs, and insects  ", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
+        animal.setGeoRange(" Central and Eastern United States  ");
+        assertEquals("Central and Eastern United States", animal.getGeoRange());
+        animal.setGeoRange("  Central and Eastern United States  ");
+        assertEquals("Central and Eastern United States", animal.getGeoRange());
+        animal.setGeoRange(" Central and Eastern United States   ");
+        assertEquals("Central and Eastern United States", animal.getGeoRange());
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getImageLink() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setImageLink() {
+        Animal animal = new Animal(1, "  Southern Copperhead  ", "  Agkistrodon contortrix contortix  ", "  Reptile", "  Diurnal   ", 4.0, 4.5, 0.5, 0.75, 18.0, "  Woodlands and rocky hillsides   ", "  Small mammals, birds, frogs, and insects  ", "Central and Eastern United States", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg");
+        animal.setImageLink(" https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg  ");
+        assertEquals("https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg", animal.getImageLink());
+        animal.setImageLink("  https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg  ");
+        assertEquals("https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg", animal.getImageLink());
+        animal.setImageLink(" https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg   ");
+        assertEquals("https://upload.wikimedia.org/wikipedia/commons/c/ce/Copperhead_%28Agkistrodon_contortrix%29_photographed_in_Liberty_Co.%2C_Texas._W._L._Farr.jpg", animal.getImageLink());
+
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void getId() {
     }
 
-    @Test
+    @org.junit.Test(timeout = 300)
     public void setId() {
     }
 }
